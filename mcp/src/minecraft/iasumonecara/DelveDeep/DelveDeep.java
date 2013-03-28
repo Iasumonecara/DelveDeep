@@ -168,11 +168,8 @@ public class DelveDeep {
         GameRegistry.registerBlock(naturalGranite, "naturalGranite");
         
         GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx",'x', dirtStack, 'y', gravelStack);
-        
-        
-        
-        
-            // End Basic Blocks
+           
+        // End Basic Blocks
         
         
         LanguageRegistry.addName(ElectricMotor, "Electric Motor");
