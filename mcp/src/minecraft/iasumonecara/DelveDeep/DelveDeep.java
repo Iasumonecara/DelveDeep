@@ -22,7 +22,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="DelveDeep", name="DelveDeep", version="0.0.1")
+@Mod(modid="DelveDeep", name="DelveDeep", version="0.0.2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 
