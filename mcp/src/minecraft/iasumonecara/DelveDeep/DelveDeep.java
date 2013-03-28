@@ -28,7 +28,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 
 public class DelveDeep {
 	
-    @Instance("DelveDeep")
+	@Instance("DelveDeep")
     public static DelveDeep instance;
     
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
@@ -45,11 +45,6 @@ public class DelveDeep {
     @Init
     public void load(FMLInitializationEvent event) {
         proxy.registerRenderers();
-   //     Block naturalBasalt = new GenericNaturalStone(500, 2, Material.rock)
-   //     	.setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setResistance(5.0F);
-
-   //     Block naturalMarble = new GenericNaturalStone(501, 1, Material.rock)
-	//		.setHardness(0.5F).setStepSound(Block.soundStoneFootstep).setResistance(5.0F);
         naturalBasalt = new naturalBasaltBlock(500, "naturalBasalt").setUnlocalizedName("naturalBasalt").setHardness(3.0F).setResistance(10.0F);
         naturalMarble = new naturalMarbleBlock(501, "naturalMarble").setUnlocalizedName("naturalMarble").setHardness(3.0F).setResistance(10.0F);
         
