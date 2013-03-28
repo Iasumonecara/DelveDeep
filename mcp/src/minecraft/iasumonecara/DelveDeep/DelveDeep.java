@@ -1,6 +1,7 @@
 package iasumonecara.DelveDeep;
-//updatecheck
+
 import iasumonecara.DelveDeep.blocks.naturalBasaltBlock;
+import iasumonecara.DelveDeep.blocks.naturalMarbleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
