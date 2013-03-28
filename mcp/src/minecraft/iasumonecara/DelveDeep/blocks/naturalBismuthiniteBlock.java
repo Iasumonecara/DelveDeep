@@ -6,11 +6,11 @@ import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 
 
-public class naturalBisthuthiniteBlock extends Block{
+public class naturalBismuthiniteBlock extends Block{
 
 	String texture;
 	
-	public naturalBisthuthiniteBlock(int par1, String texture) {
+	public naturalBismuthiniteBlock(int par1, String texture) {
 		super(par1, Material.rock);
 		this.setCreativeTab(CreativeTabs.tabBlock);
 		this.texture = texture;
