@@ -1,4 +1,4 @@
-package iasumonecara.DelveDeep;
+package iasumonecara.DelveDeep.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

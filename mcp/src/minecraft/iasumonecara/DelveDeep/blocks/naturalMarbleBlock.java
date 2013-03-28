@@ -1,4 +1,4 @@
-package iasumonecara.DelveDeep;
+package iasumonecara.DelveDeep.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -18,6 +18,6 @@ public class naturalMarbleBlock extends Block{
 	}
 
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("inception" + texture);
+		this.blockIcon = iconRegister.registerIcon("DelveDeep:NaturalMarble");
 	}
 }
