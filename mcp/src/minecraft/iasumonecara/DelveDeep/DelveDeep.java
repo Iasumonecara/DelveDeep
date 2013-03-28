@@ -33,7 +33,8 @@ public class DelveDeep {
 	@Instance("DelveDeep")
     public static DelveDeep instance;
 	private final static Item BasicCircuit = new BasicCircuit(5000);
-    
+	
+	
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
                     serverSide="iasumonecara.DelveDeep.CommonProxy")
     public static CommonProxy proxy;
