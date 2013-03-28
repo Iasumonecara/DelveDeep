@@ -3,6 +3,7 @@ package iasumonecara.DelveDeep;
 import iasumonecara.DelveDeep.blocks.naturalBasaltBlock;
 import iasumonecara.DelveDeep.blocks.naturalGraniteBlock;
 import iasumonecara.DelveDeep.blocks.naturalMarbleBlock;
+import iasumonecara.DelveDeep.items.BasicCircuit;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -31,6 +32,7 @@ public class DelveDeep {
 	
 	@Instance("DelveDeep")
     public static DelveDeep instance;
+	private final static Item BasicCircuit = new BasicCircuit(5000);
     
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
                     serverSide="iasumonecara.DelveDeep.CommonProxy")
@@ -62,8 +64,10 @@ public class DelveDeep {
         LanguageRegistry.addName(naturalGranite, "Natural Granite");
         MinecraftForge.setBlockHarvestLevel(naturalGranite, "pickaxe", 0);
         GameRegistry.registerBlock(naturalGranite, "naturalGranite");
+        
+        LanguageRegistry.addName(BasicCircuit, "Basic Circuit");
             // End Basic Blocks
-            
+        
     }
     
     @PostInit
