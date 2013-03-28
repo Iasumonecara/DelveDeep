@@ -1,7 +1,17 @@
 package iasumonecara.DelveDeep;
 
 import iasumonecara.DelveDeep.blocks.naturalBasaltBlock;
+import iasumonecara.DelveDeep.blocks.naturalGraniteBlock;
 import iasumonecara.DelveDeep.blocks.naturalMarbleBlock;
+import iasumonecara.DelveDeep.items.BasicCircuit;
+import iasumonecara.DelveDeep.items.ElectricMotor;
+import iasumonecara.DelveDeep.items.ConduitBox;
+import iasumonecara.DelveDeep.items.DrivePulley;
+import iasumonecara.DelveDeep.items.Fan;
+import iasumonecara.DelveDeep.items.InsulatedCopperWire;
+import iasumonecara.DelveDeep.items.Insulation;
+import iasumonecara.DelveDeep.items.UninsulatedCopperWire;
+import iasumonecara.DelveDeep.items.Rotor;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -22,7 +32,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="DelveDeep", name="DelveDeep", version="0.0.3")
+@Mod(modid="DelveDeep", name="DelveDeep", version="0.1.0")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 
@@ -30,12 +40,101 @@ public class DelveDeep {
 	
 	@Instance("DelveDeep")
     public static DelveDeep instance;
-    
+	private final static Item BasicCircuit = new BasicCircuit(5000);
+	private final static Item ElectricMotor = new ElectricMotor(5001);
+	private final static Item ConduitBox = new ConduitBox(5002);
+	private final static Item Fan = new Fan(5003);
+	private final static Item InsulatedCopperWire = new InsulatedCopperWire(5004);
+	private final static Item UninsulatedCopperWire = new UninsulatedCopperWire(5005);
+	private final static Item Rotor = new Rotor(5006); 
+	private final static Item Insulation = new Insulation(5007);
+	private final static Item DrivePulley = new DrivePulley(5008);
+	
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
                     serverSide="iasumonecara.DelveDeep.CommonProxy")
     public static CommonProxy proxy;
+    
+    //natural stone
+    public static Block naturalAlabaster;
+    public static Block naturalAlunite;
+    public static Block naturalAnhydrite;
     public static Block naturalBasalt;
+    public static Block naturalBauxite;
+    public static Block naturalBismuthinite;
+    public static Block naturalBitumousCoal;
+    public static Block naturalBorax;
+    public static Block naturalBrimstone;
+    public static Block naturalCalcite;
+    public static Block naturalCassiterite;
+    public static Block naturalChalk;
+    public static Block naturalChert;
+    public static Block naturalChromite;
+    public static Block naturalCinnabar;
+    public static Block naturalClaystone;
+    public static Block naturalCobaltite;
+    public static Block naturalConglomerate;
+    public static Block naturalCryolite;
+    public static Block naturalDacite;
+    public static Block naturalDiorite;
+    public static Block naturalGabbro;
+    public static Block naturalGalena;
+    public static Block naturalGarnierite;
+    public static Block naturalGranite;
+    public static Block naturalGraphite;
+    public static Block naturalGypsum;
+    public static Block naturalHematite;
+    public static Block naturalHornblende;
+    public static Block naturalHornSilver;
+    public static Block naturalIlmenite;
+    public static Block naturalJet;
+    public static Block naturalKaolinite;
+    public static Block naturalKimberlite;
+    public static Block naturalLignite;
+    public static Block naturalLimestone;
+    public static Block naturalLimonite;
+    public static Block naturalMagnetite;
+    public static Block naturalMalachite;
     public static Block naturalMarble;
+    public static Block naturalMarcasite;
+    public static Block naturalMica;
+    public static Block naturalMicrocline;
+    public static Block naturalMudstone;
+    public static Block naturalNativeAluminum;
+    public static Block naturalNativeCopper;
+    public static Block naturalNativeGold;
+    public static Block naturalNativePlatinum;
+    public static Block naturalNativeSilver;
+    public static Block naturalObsidian;
+    public static Block naturalOlivine;
+    public static Block naturalOrpiment;
+    public static Block naturalOrthoclase;
+    public static Block naturalPericlase;
+    public static Block naturalPetrifiedWood;
+    public static Block naturalPhyllite;
+    public static Block naturalPitchblende;
+    public static Block naturalPuddingstone;
+    public static Block naturalPyrolusite;
+    public static Block naturalQuartzite;
+    public static Block naturalRawAdamantine;
+    public static Block naturalRealgar;
+    public static Block naturalRedstone;
+    public static Block naturalRhyolite;
+    public static Block naturalRockSalt;
+    public static Block naturalRutile;
+    public static Block naturalSaltpeter;
+    public static Block naturalSandstone;
+    public static Block naturalSatinspar;
+    public static Block naturalSchist;
+    public static Block naturalSelenite;
+    public static Block naturalSerpentine;
+    public static Block naturalShale;
+    public static Block naturalSiltstone;
+    public static Block naturalSlate;
+    public static Block naturalSphalerite;
+    public static Block naturalStibnite;
+    public static Block naturalSylvite;
+    public static Block naturalTalc;
+    public static Block naturalTetrahedrite;
     
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -45,9 +144,16 @@ public class DelveDeep {
     @Init
     public void load(FMLInitializationEvent event) {
         proxy.registerRenderers();
+        
+        ItemStack gravelStack = new ItemStack(Block.gravel);
+        ItemStack cobbleStack = new ItemStack(Block.cobblestone);
+        ItemStack dirtStack = new ItemStack(Block.dirt);
+        ItemStack ingotIronStack = new ItemStack(Item.ingotIron);
+        
+        
         naturalBasalt = new naturalBasaltBlock(500, "naturalBasalt").setUnlocalizedName("naturalBasalt").setHardness(3.0F).setResistance(10.0F);
         naturalMarble = new naturalMarbleBlock(501, "naturalMarble").setUnlocalizedName("naturalMarble").setHardness(3.0F).setResistance(10.0F);
-        
+        naturalGranite = new naturalGraniteBlock(502, "naturalGranite").setUnlocalizedName("naturalGranite").setHardness(3.0F).setResistance(10.0F);
 
         LanguageRegistry.addName(naturalBasalt, "Natural Basalt");
         MinecraftForge.setBlockHarvestLevel(naturalBasalt, "pickaxe", 0);
@@ -56,10 +162,32 @@ public class DelveDeep {
         LanguageRegistry.addName(naturalMarble, "Natural Marble");
         MinecraftForge.setBlockHarvestLevel(naturalMarble, "pickaxe", 3);
         GameRegistry.registerBlock(naturalMarble, "naturalMarble");
+        
+        LanguageRegistry.addName(naturalGranite, "Natural Granite");
+        MinecraftForge.setBlockHarvestLevel(naturalGranite, "pickaxe", 0);
+        GameRegistry.registerBlock(naturalGranite, "naturalGranite");
+        
+        GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx",'x', dirtStack, 'y', gravelStack);
+        
+        
+        
+        
             // End Basic Blocks
-            
+        
+        
+        LanguageRegistry.addName(ElectricMotor, "Electric Motor");
+        LanguageRegistry.addName(BasicCircuit, "Basic Circuit");
+        LanguageRegistry.addName(ConduitBox, "Conduit Box");
+        LanguageRegistry.addName(DrivePulley, "Drive Pulley");
+        LanguageRegistry.addName(Fan,"Fan");
+        LanguageRegistry.addName(InsulatedCopperWire,"Insulated Copper Wire");
+        LanguageRegistry.addName(Insulation, "Insulation");
+        LanguageRegistry.addName(Rotor, "Rotor");
+        LanguageRegistry.addName(UninsulatedCopperWire, "Uninsulated Copper Wire");
+        
+        
     }
-    
+ 
     @PostInit
     public void postInit(FMLPostInitializationEvent event) {
             // Stub Method
