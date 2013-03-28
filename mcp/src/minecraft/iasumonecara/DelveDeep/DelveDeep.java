@@ -1,6 +1,7 @@
 package iasumonecara.DelveDeep;
 
 import iasumonecara.DelveDeep.blocks.naturalBasaltBlock;
+import iasumonecara.DelveDeep.blocks.naturalGraniteBlock;
 import iasumonecara.DelveDeep.blocks.naturalMarbleBlock;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -36,6 +37,7 @@ public class DelveDeep {
     public static CommonProxy proxy;
     public static Block naturalBasalt;
     public static Block naturalMarble;
+    public static Block naturalGranite;
     
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -47,7 +49,7 @@ public class DelveDeep {
         proxy.registerRenderers();
         naturalBasalt = new naturalBasaltBlock(500, "naturalBasalt").setUnlocalizedName("naturalBasalt").setHardness(3.0F).setResistance(10.0F);
         naturalMarble = new naturalMarbleBlock(501, "naturalMarble").setUnlocalizedName("naturalMarble").setHardness(3.0F).setResistance(10.0F);
-        
+        naturalGranite = new naturalGraniteBlock(502, "naturalGranite").setUnlocalizedName("naturalGranite").setHardness(3.0F).setResistance(10.0F);
 
         LanguageRegistry.addName(naturalBasalt, "Natural Basalt");
         MinecraftForge.setBlockHarvestLevel(naturalBasalt, "pickaxe", 0);
@@ -56,6 +58,10 @@ public class DelveDeep {
         LanguageRegistry.addName(naturalMarble, "Natural Marble");
         MinecraftForge.setBlockHarvestLevel(naturalMarble, "pickaxe", 3);
         GameRegistry.registerBlock(naturalMarble, "naturalMarble");
+        
+        LanguageRegistry.addName(naturalGranite, "Natural Granite");
+        MinecraftForge.setBlockHarvestLevel(naturalGranite, "pickaxe", 0);
+        GameRegistry.registerBlock(naturalGranite, "naturalGranite");
             // End Basic Blocks
             
     }
