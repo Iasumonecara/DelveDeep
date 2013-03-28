@@ -20,6 +20,15 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
+import iasumonecara.DelveDeep.items.BasicCircuit;
+import iasumonecara.DelveDeep.items.ElectricMotor;
+import iasumonecara.DelveDeep.items.ConduitBox;
+import iasumonecara.DelveDeep.items.DrivePulley;
+import iasumonecara.DelveDeep.items.Fan;
+import iasumonecara.DelveDeep.items.InsulatedCopperWire;
+import iasumonecara.DelveDeep.items.Insulation;
+import iasumonecara.DelveDeep.items.UninsulatedCopperWire;
+import iasumonecara.DelveDeep.items.Rotor;
 import iasumonecara.DelveDeep.blocks.naturalAlabasterBlock;
 import iasumonecara.DelveDeep.blocks.naturalAluniteBlock;
 import iasumonecara.DelveDeep.blocks.naturalAnhydriteBlock;
@@ -110,6 +119,17 @@ public class DelveDeep {
 	
 	@Instance("DelveDeep")
     public static DelveDeep instance;
+	
+	private final static Item BasicCircuit = new BasicCircuit(5000);
+	  private final static Item ElectricMotor = new ElectricMotor(5001);
+	  private final static Item ConduitBox = new ConduitBox(5002);
+	  private final static Item Fan = new Fan(5003);
+	  private final static Item InsulatedCopperWire = new InsulatedCopperWire(5004);
+	  private final static Item UninsulatedCopperWire = new UninsulatedCopperWire(5005);
+	  private final static Item Rotor = new Rotor(5006); 
+	  private final static Item Insulation = new Insulation(5007);
+	  private final static Item DrivePulley = new DrivePulley(5008);
+	  
     
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
                     serverSide="iasumonecara.DelveDeep.CommonProxy")
@@ -205,6 +225,11 @@ public class DelveDeep {
     @Init
     public void load(FMLInitializationEvent event) {
         proxy.registerRenderers();
+        //Items
+        ItemStack gravelStack = new ItemStack(Block.gravel);
+        ItemStack cobbleStack = new ItemStack(Block.cobblestone);
+        ItemStack dirtStack = new ItemStack(Block.dirt);
+        ItemStack ingotIronStack = new ItemStack(Item.ingotIron);
         
         //Natural Blocks
         naturalAlabaster = new naturalAlabasterBlock(499, "naturalAlabaster").setUnlocalizedName("naturalAlabaster").setHardness(3.0F).setResistance(10.0F);
@@ -607,7 +632,17 @@ public class DelveDeep {
         MinecraftForge.setBlockHarvestLevel(naturalTetrahedrite, "pickaxe", 0);
         GameRegistry.registerBlock(naturalTetrahedrite, "naturalTetrahedrite");
                     // End Natural Blocks
-            
+        GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx",'x', dirtStack, 'y', gravelStack);
+        
+        LanguageRegistry.addName(ElectricMotor, "Electric Motor");
+        LanguageRegistry.addName(BasicCircuit, "Basic Circuit");
+        LanguageRegistry.addName(ConduitBox, "Conduit Box");
+        LanguageRegistry.addName(DrivePulley, "Drive Pulley");
+        LanguageRegistry.addName(Fan,"Fan");
+        LanguageRegistry.addName(InsulatedCopperWire,"Insulated Copper Wire");
+        LanguageRegistry.addName(Insulation, "Insulation");
+        LanguageRegistry.addName(Rotor, "Rotor");
+        LanguageRegistry.addName(UninsulatedCopperWire, "Uninsulated Copper Wire");           
     }
     
     @PostInit
