@@ -18,6 +18,6 @@ public class naturalSerpentineBlock extends Block{
 	}
 
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("DelveDeep:NaturalBasalt");
+		this.blockIcon = iconRegister.registerIcon("DelveDeep:NaturalSerpentine");
 	}
 }

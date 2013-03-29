@@ -18,6 +18,6 @@ public class naturalGraniteBlock extends Block{
 	}
 
 	public void registerIcons(IconRegister iconRegister) {
-		this.blockIcon = iconRegister.registerIcon("DelveDeep:NaturalMarble");
+		this.blockIcon = iconRegister.registerIcon("DelveDeep:NaturalGranite");
 	}
 }
