@@ -220,15 +220,25 @@ public class DelveDeep {
     
     @Init
     public void load(FMLInitializationEvent event) {
+    	
         proxy.registerRenderers();
         
         ItemStack gravelStack = new ItemStack(Block.gravel);
         ItemStack cobbleStack = new ItemStack(Block.cobblestone);
         ItemStack dirtStack = new ItemStack(Block.dirt);
         ItemStack ingotIronStack = new ItemStack(Item.ingotIron);
-     
-        GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx",'x', dirtStack, 'y', gravelStack);
-           
+        ItemStack ElectricMotorStack = new ItemStack(DelveDeep.ElectricMotor);
+        ItemStack ConduitBoxStack = new ItemStack(DelveDeep.ConduitBox);
+        ItemStack InsulatedCopperWireStack = new ItemStack(DelveDeep.InsulatedCopperWire);
+        ItemStack RotorStack = new ItemStack(DelveDeep.Rotor);
+        ItemStack FanStack = new ItemStack(DelveDeep.Fan);	
+        ItemStack DrivePulleyStack = new ItemStack(DelveDeep.DrivePulley);
+        
+
+        GameRegistry.addRecipe(new ItemStack(Block.cobblestone), "xy", "yx", 'x', dirtStack, 'y', gravelStack);
+        GameRegistry.addRecipe(new ItemStack(DelveDeep.ElectricMotor), "yxy", "zzw", "yvy", 'x', FanStack, 'y', InsulatedCopperWireStack, 'z', RotorStack, 'w', DrivePulleyStack, 'v', ConduitBox);
+        
+        
         LanguageRegistry.addName(ElectricMotor, "Electric Motor");
         LanguageRegistry.addName(BasicCircuit, "Basic Circuit");
         LanguageRegistry.addName(ConduitBox, "Conduit Box");
