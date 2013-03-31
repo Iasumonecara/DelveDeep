@@ -26,6 +26,7 @@ import iasumonecara.DelveDeep.blocks.naturalChromiteBlock;
 import iasumonecara.DelveDeep.blocks.naturalCinnabarBlock;
 import iasumonecara.DelveDeep.blocks.naturalClaystoneBlock;
 import iasumonecara.DelveDeep.blocks.naturalCobaltiteBlock;
+import iasumonecara.DelveDeep.blocks.ConcreteBlock;
 import iasumonecara.DelveDeep.blocks.naturalConglomerateBlock;
 import iasumonecara.DelveDeep.blocks.naturalCryoliteBlock;
 import iasumonecara.DelveDeep.blocks.naturalDaciteBlock;
@@ -212,6 +213,10 @@ public class DelveDeep {
     public static Block naturalSylvite;
     public static Block naturalTalc;
     public static Block naturalTetrahedrite;
+    
+    //Manufactured Stone
+    public static Block ConcreteBlock;
+   
     
     @PreInit
     public void preInit(FMLPreInitializationEvent event) {
@@ -652,6 +657,11 @@ public class DelveDeep {
         //Smooth Blocks
         //Carved Blocks
         //Brick Blocks
+        //Manufactured Blocks
+        ConcreteBlock = new ConcreteBlock(578, "ConcreteBlock").setUnlocalizedName("ConcreteBlock").setHardness(3.0F).setResistance(10.0F);
+        LanguageRegistry.addName(ConcreteBlock, "Concrete Block");
+        MinecraftForge.setBlockHarvestLevel(ConcreteBlock, "pickaxe", 0);
+        GameRegistry.registerBlock(ConcreteBlock, "ConcreteBlock");
         
     }
  
