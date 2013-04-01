@@ -9,6 +9,26 @@ import iasumonecara.DelveDeep.items.InsulatedCopperWire;
 import iasumonecara.DelveDeep.items.Insulation;
 import iasumonecara.DelveDeep.items.UninsulatedCopperWire;
 import iasumonecara.DelveDeep.items.Rotor;
+import iasumonecara.DelveDeep.items.ACDCConverter;
+import iasumonecara.DelveDeep.items.AluminumPlate;
+import iasumonecara.DelveDeep.items.Antenna;
+import iasumonecara.DelveDeep.items.Chisel;
+import iasumonecara.DelveDeep.items.CoilSpring;
+import iasumonecara.DelveDeep.items.CopperPipe;
+import iasumonecara.DelveDeep.items.CopperPlate;
+import iasumonecara.DelveDeep.items.Drill;
+import iasumonecara.DelveDeep.items.ElectromagneticCoil;
+import iasumonecara.DelveDeep.items.Hammer;
+import iasumonecara.DelveDeep.items.Lens;
+import iasumonecara.DelveDeep.items.RadioTransmitter;
+import iasumonecara.DelveDeep.items.Rebar;
+import iasumonecara.DelveDeep.items.RecieverSwitchBoard;
+import iasumonecara.DelveDeep.items.Screwdriver;
+import iasumonecara.DelveDeep.items.SteelPlate;
+import iasumonecara.DelveDeep.items.TeleportationCore;
+import iasumonecara.DelveDeep.items.TemporalCore;
+import iasumonecara.DelveDeep.items.TinPlate;
+import iasumonecara.DelveDeep.items.Turbine;
 import iasumonecara.DelveDeep.blocks.naturalAlabasterBlock;
 import iasumonecara.DelveDeep.blocks.naturalAluniteBlock;
 import iasumonecara.DelveDeep.blocks.naturalAnhydriteBlock;
@@ -110,7 +130,7 @@ import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(modid="DelveDeep", name="DelveDeep", version="0.1.1")
+@Mod(modid="DelveDeep", name="DelveDeep", version="0.1.2")
 @NetworkMod(clientSideRequired=true, serverSideRequired=false)
 
 
@@ -127,6 +147,26 @@ public class DelveDeep {
 	private final static Item Rotor = new Rotor(5006); 
 	private final static Item Insulation = new Insulation(5007);
 	private final static Item DrivePulley = new DrivePulley(5008);
+	private final static Item ACDCConverter = new ACDCConverter(5009);
+	private final static Item Antenna = new Antenna(5010);
+	private final static Item Chisel = new Chisel(5011);
+	private final static Item CoilSpring = new CoilSpring(5012);
+	private final static Item CopperPipe = new CopperPipe(5013);
+	private final static Item CopperPlate = new CopperPlate(5014);
+	private final static Item Drill = new Drill(5015);
+	private final static Item ElectromagneticCoil = new ElectromagneticCoil(5016);
+	private final static Item Hammer = new Hammer(5017);
+	private final static Item Lens = new Lens(5018);
+	private final static Item RadioTransmitter = new RadioTransmitter(5019);
+	private final static Item Rebar = new Rebar(5020);
+	private final static Item RecieverSwitchBoard = new RecieverSwitchBoard(5021);
+	private final static Item Screwdriver = new Screwdriver(5022);
+	private final static Item SteelPlate = new SteelPlate(5023);
+	private final static Item TeleporationCore = TeleporationCore(5024);
+	private final static Item TemporalCore = TemporalCore(5025);
+	private final static Item TinPlate = TinPlate(2026);
+	private final static Item Turbine = Turbine(5027);
+	
 	
     @SidedProxy(clientSide="iasumonecara.DelveDeep.client.ClientProxy",
                     serverSide="iasumonecara.DelveDeep.CommonProxy")
@@ -223,7 +263,8 @@ public class DelveDeep {
             // Stub Method
     }
     
-    @Init
+
+	@Init
     public void load(FMLInitializationEvent event) {
     	
         proxy.registerRenderers();
@@ -253,6 +294,9 @@ public class DelveDeep {
         LanguageRegistry.addName(Insulation, "Insulation");
         LanguageRegistry.addName(Rotor, "Rotor");
         LanguageRegistry.addName(UninsulatedCopperWire, "Uninsulated Copper Wire");
+        LanguageRegistry.addName(ACDCConverter, "AC/DC Converter");
+        LanguageRegistry.addName(Antenna, "Antenna");
+        LanguageRegistry.addName(TinPlate, "Tin Plate");
         
         //Natural Blocks
         naturalAlabaster = new naturalAlabasterBlock(499, "naturalAlabaster").setUnlocalizedName("naturalAlabaster").setHardness(3.0F).setResistance(10.0F);
